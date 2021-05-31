@@ -339,8 +339,25 @@ namespace Analytics.Helpers.BO
 
                         if (uid_ob_list != null)
                             uid_obj = uid_ob_list.Where(x => x.UniqueNumber.ToString() == Shorturl).Select(y => y).SingleOrDefault();
+                    else
+                    {
+                        uid_ob_list = (from u in dc.uiddata1
+                                       where u.UniqueNumber == Shorturl
+                                       select new uiddataobj()
+                                       {
+                                           UniqueNumber = u.UniqueNumber,
+                                           FK_RID = u.FK_RID,
+                                           PK_Uid = u.PK_Uid,
+                                           FK_ClientID = u.FK_ClientID,
+                                           MobileNumber = u.MobileNumber,
+                                           LongurlorMessage = u.LongurlorMessage,
+                                           Type = u.Type
+                                       }).ToList();
+                        if (uid_ob_list != null)
+                            uid_obj = uid_ob_list.Where(x => x.UniqueNumber.ToString() == Shorturl).Select(y => y).SingleOrDefault();
 
                     }
+                }
                     catch (Exception ex)
                     {
                         string uiderrtrack = "issue in uiddata query fetching ===shorturl= " + Shorturl + " ";

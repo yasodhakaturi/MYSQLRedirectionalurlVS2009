@@ -18,5 +18,7 @@ namespace Analytics
         public string CookieValue { get; set; }
         public string MobileNumber { get; set; }
         public Nullable<int> FK_ShorturlId { get; set; }
+    
+        public virtual shorturldata shorturldata { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace Analytics
         {
             this.shorturldatas = new HashSet<shorturldata>();
             this.uiddatas = new HashSet<uiddata>();
+            this.uiddata1 = new HashSet<uiddata1>();
         }
     
         public int PK_Rid { get; set; }
@@ -37,5 +38,7 @@ namespace Analytics
         public virtual ICollection<shorturldata> shorturldatas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<uiddata> uiddatas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<uiddata1> uiddata1 { get; set; }
     }
 }

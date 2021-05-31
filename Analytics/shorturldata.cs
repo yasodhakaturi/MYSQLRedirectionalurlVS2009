@@ -14,6 +14,12 @@ namespace Analytics
     
     public partial class shorturldata
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public shorturldata()
+        {
+            this.cookietables = new HashSet<cookietable>();
+        }
+    
         public int PK_Shorturl { get; set; }
         public string Ipv4 { get; set; }
         public string Ipv6 { get; set; }
@@ -51,5 +57,7 @@ namespace Analytics
         public virtual client client { get; set; }
         public virtual riddata riddata { get; set; }
         public virtual uiddata uiddata { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cookietable> cookietables { get; set; }
     }
 }

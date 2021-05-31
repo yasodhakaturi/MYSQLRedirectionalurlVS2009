@@ -49,6 +49,7 @@ namespace Analytics
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tmp_rownum_update> tmp_rownum_update { get; set; }
         public virtual DbSet<uiddata> uiddatas { get; set; }
+        public virtual DbSet<uiddata1> uiddata1 { get; set; }
     
         public virtual int InsertRIDData(string campaignName, string referencenumber, string pwd, Nullable<int> clientid)
         {

@@ -177,7 +177,7 @@ namespace Analytics.Helpers.BO
             }
             catch (Exception ex)
             {
-                ErrorLogs.LogErrorData(ex.StackTrace, ex.Message);
+                ErrorLogs.LogErrorData("error in insershorturldata , requrl= "+req_url + " "+ex.InnerException + ex.StackTrace, ex.Message);
 
             }
             finally
